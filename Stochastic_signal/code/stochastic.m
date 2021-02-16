@@ -28,4 +28,6 @@ plot(t,out_alg,'color','k');
 hold on;
 xlabel('t [s]');
 ylabel('U [V]');
+grid on;
+set(gca, 'xtick', 0:0.2:2);
 legend('Čistý signál',strcat('AWGN: ',num2str(SNR_realAWGN)),strcat('Alg: ', num2str(SNR_realFNC)));
