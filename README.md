@@ -12,8 +12,7 @@
 - SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju)
 
 ## Linear convolution
-- ***Dopsat vlastní řešení***
-- ***Dopsat zvalidovat to proti jádrům***
+- ***DONE***
 
 ## Fourier series
 - Dodělat komplet

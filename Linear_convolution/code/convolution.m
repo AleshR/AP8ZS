@@ -62,7 +62,7 @@ function p = plt(inp_seq,conv_kernel,conv_orig)
     
 end
 
-plt(x,h1,y1);
+plt(x,h7,y7);
 
 %Plot s mym algoritmem 
 #{
