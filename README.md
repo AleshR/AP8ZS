@@ -30,7 +30,7 @@
 	- Problém s fázovým posuvem
 	- Možná problém, že to beru jako komplexní
 	- Nějak to došudlit
--Výpis koeficientů do tabulky, nebo ***sprintf-em***
+- Výpis koeficientů do tabulky, nebo ***sprintf-em***
 ![img8](Fourier/assets/img.png)
 
 ## Discrete Fourier transform (DFT)
