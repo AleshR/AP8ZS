@@ -6,10 +6,10 @@
 - ***Done***
 
 ## Signal characteristics
-- Doplnit výpis do tabulky
-
+- ***Done***
+- Dopsat pocitani charakteristik signalu
 ## Stochastic signal
-- SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju)
+- SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju
 
 ## Linear convolution
 - ***Done***
