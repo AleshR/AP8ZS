@@ -25,7 +25,13 @@
 ![img7](/Linear_convolution/assets/img.png)
 
 ## Fourier series
-- Dodělat komplet
+- Dodělat
+- Asi budu muset přepsat alg.
+	- Problém s fázovým posuvem
+	- Možná problém, že to beru jako komplexní
+	- Nějak to došudlit
+-Výpis koeficientů do tabulky, nebo ***sprintf-em***
+![img8](Fourier/assets/img.png)
 
 ## Discrete Fourier transform (DFT)
 - Dodělat komplet
