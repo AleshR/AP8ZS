@@ -1,3 +1,4 @@
+clear all;
 
 NP = 3;  %number of period
 N= 128;  %length of the signal

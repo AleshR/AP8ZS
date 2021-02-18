@@ -1,4 +1,4 @@
-
+clear all;
 Ts = 1 %perioda;
 T_sig = 10;
 t = -20:(1/Ts):20;

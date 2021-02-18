@@ -7,7 +7,7 @@
 
 ## Signal characteristics
 - ***Done***
-- Dopsat pocitani charakteristik signalu
+
 ## Stochastic signal
 - SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju
 
