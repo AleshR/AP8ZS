@@ -1,3 +1,4 @@
+close all;
 clear all;
 N = 2;
 f_sig = 1;
