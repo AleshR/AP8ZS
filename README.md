@@ -18,7 +18,7 @@
 ## Stochastic signal
 - SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju
 - ***Done***
-![img6](/Signal_characteristics/assets/img.png)
+![img6](/Stochastic_signal/assets/img.png)
 
 ## Linear convolution
 - ***Done***
