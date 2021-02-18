@@ -1,3 +1,4 @@
+clear all;
 amp = 2; %amplituda
 offset = 1; %DC složka
 
@@ -11,6 +12,8 @@ sinus = offset+amp*sin(omega*t);
 sqr = offset+amp*square(omega*t);
 saw = offset+amp*sawtooth(omega*t);
 
+figure(1);
+clf();
 subplot(311);;
 stem(t,sinus,'r');
 
@@ -35,3 +38,4 @@ title({"Pilový navzorkovaný průběh" ; "Amp = 2V, DC=1V, fi0 = 0 rad, F_{sig}
 xlabel('Time [s]');
 ylabel('Voltage [V]');
 grid on;
+savefig("test.png");

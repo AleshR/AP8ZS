@@ -12,7 +12,7 @@
 - SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju)
 
 ## Linear convolution
-- ***DONE***
+- ***Done***
 
 ## Fourier series
 - Dodělat komplet
