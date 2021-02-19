@@ -8,7 +8,7 @@ t = 0:1/f_sample:(2*1/f_sig);
 AMP = 325;
 DC = 0;
 SNR = 20; %dB
-SNRlin = 10^(SNR/20);
+SNRlin = AMP/sqrt(2)/10^(SNR/20);
 
 sine = DC+AMP*sin(2*f_sig*pi*t);
 

@@ -16,7 +16,6 @@
 
 
 ## Stochastic signal
-- SNR se chová nějak divně (nevim jestli je to nahodilé, nebo blbě implementuju
 - ***Done***
 ![img6](/Stochastic_signal/assets/img.png)
 
