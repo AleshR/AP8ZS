@@ -4,10 +4,39 @@
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\usepackage{xcolor}
+\lstset{
+    language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
+    basicstyle=\ttfamily\small,
+    numberstyle=\footnotesize,
+    numbers=left,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    tabsize=2,
+    rulecolor=\color{black!30},
+    title=\lstname,
+    escapeinside={\%*}{*)},
+    breaklines=true,
+    breakatwhitespace=true,
+    framextopmargin=2pt,
+    framexbottommargin=2pt,
+    extendedchars=false,
+    inputencoding=utf8
+}
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
 
@@ -37,16 +66,15 @@
 \section{Zadání}
 Vygenerujte navzorkovaný sinusový, obdélníkový a pilový napěťový signál o daných vlastnostech (stejnosměrná složka,amplituda, frekvence signálu, počáteční fáze, vzorkovací frekvence, délka signálu).\\
 Všechny tyto parametry se budou dát nastavit v samostatných proměnných!\\
-Po spuštění byste měli dosáhnout vzhledu, který vidíte na obrázku níže. Vytvořte protokol v MS Word (doc,docx), vložte obrázek průběhu signálů včetně textu funkčního zdrojového kódu (MATLAB nebo Mathematica) a vložte Váš individuální komentář se závěry.
+Po spuštění byste měli dosáhnout vzhledu, který vidíte na obrázku níže. Vytvořte protokol, vložte obrázek průběhu signálů včetně textu funkčního zdrojového kódu (MATLAB nebo Mathematica) a vložte Váš individuální komentář se závěry.
 \section{Vypracování}
-
-\section{Závěr}
-
+\includegraphics[scale=0.25]{../assets/img.png}
+\newpage
 \section{Kód}
 %--------------------------------------------------------------------------------------------------
 %	CODE
 %--------------------------------------------------------------------------------------------------
-
-
-
+\lstinputlisting[language=Octave]{../code/signal_gen1.m}
+\href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
 \end{document}
+
