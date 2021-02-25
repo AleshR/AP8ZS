@@ -1,0 +1,86 @@
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\usepackage{listingsutf8}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\usepackage{xcolor}
+\lstset{
+    language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
+    basicstyle=\ttfamily\tiny,
+    numberstyle=\footnotesize,
+    numbers=left,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    tabsize=2,
+    rulecolor=\color{black!30},
+    title=\lstname,
+    escapeinside={\%*}{*)},
+    breaklines=true,
+    breakatwhitespace=true,
+    framextopmargin=2pt,
+    framexbottommargin=2pt,
+    extendedchars=false,
+    inputencoding=utf8
+}
+
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Zpracování signálů} % Title
+
+\author{Bc. Aleš Ryška} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Zadání}
+\includegraphics[scale=0.35]{../assets/zadani.png}
+\\
+\includegraphics[scale=0.35]{../assets/zadani2.png}
+
+\section{Vypracování}
+
+\includegraphics[scale=0.35]{../assets/img.png}
+\\
+\includegraphics[scale=0.35]{../assets/img2.png}
+
+%--------------------------------------------------------------------------------------------------
+%	CODE
+%--------------------------------------------------------------------------------------------------
+\section{Kód}
+\lstinputlisting[language=Octave]{../code/signal_gen_p2.m}
+\href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
+
+\end{document}

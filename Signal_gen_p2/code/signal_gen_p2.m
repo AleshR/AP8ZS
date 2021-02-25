@@ -89,8 +89,8 @@ ylabel('u_2 [-]');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 subplot(3,2,5:6);
-stem(t2,sin_c,'k','linewidth', 1);
-axis([-10 10 0 2]);
+plot(t2,sin_c,'k','linewidth', 1);
+axis([-10 10 0 1.5]);
 grid on;
 
 title({"Funkce Sinc(t)"});
