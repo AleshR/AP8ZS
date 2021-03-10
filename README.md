@@ -14,6 +14,10 @@
 ![img4](/Signal_characteristics/assets/img2.png)
 ![img5](/Signal_characteristics/assets/img3.png)
 
+## Signal to noise ratio practice
+- ***Done***
+![img9](SignalNoise/assets/img.png)
+![img10](SignalNoise/assets/img2.png)
 
 ## Stochastic signal
 - ***Done***

@@ -35,7 +35,7 @@ ylabel('y_3 [-]');
 set(gca,'xtick',-20:5:20);
 grid on;
 
-t2 = -10:10;
+t2 = -10:0.5:10;
 dirac1 = dirac(t2);
 dirac2 = dirac(t2-5);
 heav1 = heaviside(t2);
@@ -89,8 +89,8 @@ ylabel('u_2 [-]');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 subplot(3,2,5:6);
-plot(t2,sin_c,'k','linewidth', 1);
-axis([-10 10 0 1.5]);
+plot(t2,sin_c,'k');
+axis([-10 10 -1 2]);
 grid on;
 
 title({"Funkce Sinc(t)"});

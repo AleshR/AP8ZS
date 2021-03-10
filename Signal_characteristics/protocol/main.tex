@@ -1,11 +1,9 @@
----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 
 \documentclass{article}
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
-
 \usepackage{listingsutf8}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -18,11 +16,12 @@
 }
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
+
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 \usepackage{xcolor}
 \lstset{
     language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
-    basicstyle=\ttfamily\tiny,
+    basicstyle=\ttfamily\small,
     numberstyle=\footnotesize,
     numbers=left,
     backgroundcolor=\color{gray!10},
@@ -38,7 +37,6 @@
     extendedchars=false,
     inputencoding=utf8
 }
-
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
 
@@ -66,26 +64,33 @@
 %----------------------------------------------------------------------------------------
 
 \section{Zadání}
-\begin{center}
-\includegraphics[scale=0.45]{../assets/zadani.png}
-\\
-\includegraphics[scale=0.45]{../assets/zadani2.png}
-\end{center}
+Navzorkujte napěťový signál y dle následující definice:\\
+$y = 5cos(2 \pi f_1 t)-2sin(2\pi f_2 t) t\in <0,500>ms $\\
+$f_s = 200 Hz, f_1 = 2Hz, f_2 = 8Hz$\\
 
-	\newpage
+Signál vhodně vykreslete a vypočítejte tyto charakteristiky a zobrazte je v přehledné tabulce:
+\begin{itemize}
+	\item střední hodnotu (mean)
+	\item efektivní hodnotu (rms)
+	\item rozptyl (var)
+	\item směrodatnou odchylku (std)
+	\item medián (median)
+	\item okamžitý výkon
+	\item střední výkon
+	\item energii
+\end{itemize}
+
+
 \section{Vypracování}
-\begin{center}
-\includegraphics[scale=0.30]{../assets/img.png}
-\\
-\includegraphics[scale=0.75]{../assets/img2.png}
-\end{center}
-
+\includegraphics[scale=0.25]{../assets/img2.png}
+\includegraphics[scale=0.25]{../assets/img.png}
+\includegraphics[scale=0.25]{../assets/img3.png}
+\newpage
+\section{Kód}
 %--------------------------------------------------------------------------------------------------
 %	CODE
 %--------------------------------------------------------------------------------------------------
-\newpage
-\section{Kód}
-\lstinputlisting[language=Octave]{../code/signal_gen_p2.m}
+\lstinputlisting[language=Octave]{../code/signal_char.m}
 \href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
-
 \end{document}
+

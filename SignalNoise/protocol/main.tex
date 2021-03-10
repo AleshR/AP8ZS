@@ -1,11 +1,9 @@
----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 
 \documentclass{article}
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
-
 \usepackage{listingsutf8}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -18,11 +16,12 @@
 }
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
+
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 \usepackage{xcolor}
 \lstset{
     language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
-    basicstyle=\ttfamily\tiny,
+    basicstyle=\ttfamily\small,
     numberstyle=\footnotesize,
     numbers=left,
     backgroundcolor=\color{gray!10},
@@ -38,7 +37,6 @@
     extendedchars=false,
     inputencoding=utf8
 }
-
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
 
@@ -66,26 +64,29 @@
 %----------------------------------------------------------------------------------------
 
 \section{Zadání}
-\begin{center}
-\includegraphics[scale=0.45]{../assets/zadani.png}
+Vygenerujte P period sinusového napěťového signálu o frekvenci $F_{sig}$,\\
+vzorkovací frekvence bude Fs, amplituda AMP se stejnosměrnou složkou DC. Na tento signál superponujte šum s normálním rozložením s nulovou střední hodnotou tak, aby odstup signál šum byl SNR dB. Konkrétní hodnoty viz níže. 
 \\
-\includegraphics[scale=0.45]{../assets/zadani2.png}
-\end{center}
+Využijte funkci "randn" ke generování šumového signálu.
+\\
+P = 2, Fsig = 1 Hz, Fs = 100 Hz, AMP = 1 V, DC = 5 V \\
 
-	\newpage
+\begin{itemize}
+	\item SNR = 5dB
+	\item SNR = 10dB
+	\item SNR = 25dB
+\end{itemize}
+
 \section{Vypracování}
-\begin{center}
-\includegraphics[scale=0.30]{../assets/img.png}
+\includegraphics[scale=0.75]{../assets/img.png}
 \\
 \includegraphics[scale=0.75]{../assets/img2.png}
-\end{center}
-
+\newpage
+\section{Kód}
 %--------------------------------------------------------------------------------------------------
 %	CODE
 %--------------------------------------------------------------------------------------------------
-\newpage
-\section{Kód}
-\lstinputlisting[language=Octave]{../code/signal_gen_p2.m}
+\lstinputlisting[language=Octave]{../code/signal_noise.m}
 \href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
-
 \end{document}
+

@@ -13,7 +13,7 @@ w0 = 1;
 
 N3 = 3;
 N10 = 10;
-N30 = 30;
+N30 = 300;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %SIGNAL
 y = DC+Amp*sawtooth((1/(2*f_signal*pi))*t);
@@ -45,5 +45,5 @@ subplot(3,1,3);
 plot(t,y);
 hold on;
 plot(t,fouri(N30,y_f,a,t,w0));
-title(strcat('Fourierova řada pro N == ',' ',num2str(N30)));
+title(strcat('Fourierova řada pro N = ',' ',num2str(N30)));
 grid on;
