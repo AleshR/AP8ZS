@@ -1,4 +1,5 @@
 clear all;
+close all;
 Ts = 1 %perioda;
 T_sig = 10;
 t = -20:(1/Ts):20;
@@ -38,8 +39,8 @@ grid on;
 t2 = -10:0.5:10;
 dirac1 = dirac(t2);
 dirac2 = dirac(t2-5);
-heav1 = heaviside(t2);
-heav2 = heaviside(t2+4);
+heav1 = heaviside(t2,1);
+heav2 = heaviside(t2+4,1);
 sin_c = sinc(t2);
 
 idx1 = dirac1 == Inf; % find Inf
