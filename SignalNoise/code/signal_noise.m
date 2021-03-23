@@ -2,7 +2,7 @@ clear all;
 close all;
 
 amp = 1; %amplituda
-offset = 0; %DC složka
+offset = 5; %DC složka
 
 f_sig = 1; %frekvence signalu
 f_samp = 100; %vzorkovaci frekvence

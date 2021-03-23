@@ -1,7 +1,10 @@
 clear all;
 
-x = [2, 4, 6, 4, 2, 4, 3, 2, 1];
+x = [0,0,1,2,3,4,4,4,3,3,2,2,1,1];%druhy ukol
+x_xmpl = [1,2,3,2,1] %prvni ukol
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h_xmpl = [0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0]; %prvni ukol
+h = [0,0,0,2,1] %druhy ukol
 h1 =[1];
 h2 = [0, 0, 0, 1];
 h3 = [-1, 1 ];
@@ -9,7 +12,12 @@ h4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 1 ];
 h5 = [3];
 h6 = [0, 0, 0, 3];
 h7 = [0, 0, -2, -1, 0];
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+y_xmpl = conv(x_xmpl,h_xmpl); %prvni ukol
+y = conv(x,h); %druhy ukol
+
 y1 = conv(x,h1);
 y2 = conv(x,h2);
 y3 = conv(x,h3);
@@ -37,32 +45,34 @@ function y = con(x_con,h_con)
   end
 end  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-figure(1);
 function p = plt(inp_seq,conv_kernel,conv_orig)
   p = con(inp_seq,conv_kernel);
   subplot(411);
-  plot(inp_seq);
+  stem(inp_seq,'filled','r','LineWidth',1.5);
   grid on;
-  title(strcat('Input sequence: ',num2str(inp_seq)));
+  title(strcat('Input sequence: ','[',num2str(inp_seq),']'));
     
   subplot(412);
-  plot(conv_kernel);
+  stem(conv_kernel,'filled','b','LineWidth',1.5);
   grid on;
-  title(strcat('Response on system h: ',num2str(conv_kernel)));
+  title(strcat('Response h: ','[',num2str(conv_kernel),']'));
   
   subplot(413);
-  plot(p);
+  stem(p,'filled','g','LineWidth',1.5);
   grid on;
-  title(strcat('Response of the system - own: ',num2str(p)));
+  title(strcat('Response custom: ','[',num2str(p),']'));
   
   subplot(414);
-  plot(conv_orig);
+  stem(conv_orig,'filled','k','LineWidth',1.5);
   grid on;
-  title(strcat('Response of the system conv: ',num2str(conv_orig)));
+  title(strcat('Response conv:', '[',num2str(conv_orig),']'));
     
 end
 
-plt(x,h7,y7);
+figure(1);
+plt(x_xmpl,h_xmpl,y_xmpl);
+figure(2);
+plt(x,h,y)
 
 %Plot s mym algoritmem 
 #{

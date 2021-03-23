@@ -1,0 +1,3 @@
+Upraveno pocitani funkce SNR
+--> chyba byla v pocitani SNR i s offsetem, takže jsem to vyřešil takto:
+signal-offset
