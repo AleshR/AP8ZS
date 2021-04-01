@@ -1,0 +1,77 @@
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{listingsutf8}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\usepackage{xcolor}
+\lstset{
+    language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
+    basicstyle=\ttfamily\small,
+    numberstyle=\footnotesize,
+    numbers=left,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    tabsize=2,
+    rulecolor=\color{black!30},
+    title=\lstname,
+    escapeinside={\%*}{*)},
+    breaklines=true,
+    breakatwhitespace=true,
+    framextopmargin=2pt,
+    framexbottommargin=2pt,
+    extendedchars=false,
+    inputencoding=utf8
+}
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Zpracování signálů} % Title
+
+\author{Bc. Aleš Ryška} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Zadání}
+Užitím konvoluce (funkce conv) a vhodně zvolenou impulsní odezvou upravte audiosignál ($voice\_short.wav$) tak, abyste dosáhli delay efektu (ozvěna, echo).\\
+Průběh původního i modifikovaného audiosignálu vykreslete (vykreslete pouze první 2 vteřiny záznamu), zároveň si oba signály poslechněte (funkce sound, případně funkce audioplayer a play), vyhodnoťte rozdíl.
+\newpage
+\section{Vypracování}
+\subsection{Kód}
+%--------------------------------------------------------------------------------------------------
+%	CODE
+%--------------------------------------------------------------------------------------------------
+\lstinputlisting[language=Octave]{../convol.m}
+\href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
+\end{document}

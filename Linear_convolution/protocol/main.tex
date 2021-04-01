@@ -1,0 +1,98 @@
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{listingsutf8}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+\usepackage{xcolor}
+\lstset{
+    language=bash, %% Troque para PHP, C, Java, etc... bash é o padrão
+    basicstyle=\ttfamily\small,
+    numberstyle=\footnotesize,
+    numbers=left,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    tabsize=2,
+    rulecolor=\color{black!30},
+    title=\lstname,
+    escapeinside={\%*}{*)},
+    breaklines=true,
+    breakatwhitespace=true,
+    framextopmargin=2pt,
+    framexbottommargin=2pt,
+    extendedchars=false,
+    inputencoding=utf8
+}
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Zpracování signálů} % Title
+
+\author{Bc. Aleš Ryška} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Zadání}
+Vypočítejte odezvu systému \textbf{y[n]} na vstupní diskrétní posloupnost \textbf{x[n]}, když znáte impulsní odezvu systému \textbf{h[n]} (tzv. konvoluční jádro).\\
+
+Uvažujte sekvenci:
+$$x = [0,1,2,3,2,1]$$
+Uživatel si vybere z těchto impulzních odezev \textbf{h[k]}:\\
+\begin{itemize}
+	\item h = [1]
+	\item h = [0,0,0,0,1]
+	\item h = [-1,1]
+	\item h = [0,0,0,0,-1,1]
+	\item h = [3]
+	\item h = [0,0,0,0,3]
+	\item h = [0,0,1,2,3]
+\end{itemize}
+
+Naprogramujte vlastní algoritmus výpočtu diskrétní lineární konvoluce a ověřte s vestavěnou funkcí matlabu „conv“.\\
+\textbf{Použijte tyto sekvence:}\\
+\begin{itemize}
+	\item \textbf{x = [0 0 1 2 3 4 4 4 3 3 2 2 1 1]}
+	\item \textbf{h = [0 0 0 2 1]}
+\end{itemize}
+\section{Vypracování}
+\includegraphics[scale=0.75]{../assets/img1.png}
+\includegraphics[scale=0.75]{../assets/img2.png}
+\section{Kód}
+%--------------------------------------------------------------------------------------------------
+%	CODE
+%--------------------------------------------------------------------------------------------------
+\lstinputlisting[language=Octave]{../code/convolution.m}
+\href{https://github.com/AleshR/AP8ZS}{Odkaz na kompetní repozitář se cvičeními}
+\end{document}
+

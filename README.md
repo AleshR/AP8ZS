@@ -33,7 +33,7 @@
 
 - ***Done***
   ![img7](/Linear_convolution/assets/img1.png)
-
+  
   ![img11](/Linear_convolution/assets/img2.png)
 
 ## Fourier series
