@@ -13,12 +13,14 @@ figure(1)
 y = c0*ones(size(t));
 
 nvec = [-N:-1:-1,1:N];            
-for n = nvec,      %<<<<<<<<<<<<<<<  the problem is here, it can't be ( -N:1:N ) or ( -N:N )             
+
+for n = nvec,
   cn = 2/(1j*n*wo);                 
   y = y + A*real(cn*exp(1j*n*wo*t)); 
   printf('\nFourier coefficent C %d\n', n)
   printf('%G\n', cn)
 end
+
 cla;
 P = T0/2;
 plot([-5 -4 -4 -3 -3 -2 -2 -1 -1  0 0  1 1 2 2 3 3 4 4 5],...    

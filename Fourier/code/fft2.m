@@ -1,48 +1,44 @@
 close all;
 clear all;
+clear;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %CONSTS
-A=1;
-f = 0;
-f_signal = 100;
+f_sample = 100; %hz
 
-N3 = 3;
-N10 = 10;
-N30 = 30;
+t = -pi:1/f_sample:pi; %ťime
+T = max(t)-min(t); %period
 
-Ns=5;
-t=linspace(-5,5,1000);
-T=max(t);
-w0 = (3*pi)/T;
-pix2 = 2*pi;
+f = 1/T; %freq
 
-Amp = 2;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%SIGNAL
-y = Amp*sawtooth((1/(2*f_signal*pi))*t);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ns=[5 10 30];
 
-for k=1:Ns
-  ak = ((4*A*sin(pix2*k) / (pix2*k)) + (4*A*cos(pix2*k) / (pix2*k)^2)-(4*A/(pix2*k)^2));
-  bk = ((4*A*sin(pix2*k) / (pix2*k)^2) + (cos(pix2*k) / (pix2*k)));
-  f = f+((ak*cos(k*w0*t)) - bk*sin(k*w0*t));
+myFunc=@(t) (t);
+y = myFunc(t);
+
+N=Ns(1); %N
+
+Tn = 3; %Number of period
+
+A0=(2/T)*quadv(myFunc,min(t),max(t)); %A0 coeff
+
+AN = NaN(1,N);
+BN = NaN(1,N);
+
+printf('A0 is: %G /n',A0);
+
+for j=1:N
+  a=@(t) myFunc(t).*cos(2*j*pi*f*t); %Acoeff
+  A=2/T*quadv(a,min(t),max(t));
   
-  fprintf('\n------------------------------------------------------\n');
-  fprintf('Coeff a %d: ',k)
-  fprintf('%G',ak)
-  fprintf('\n');
+  b=@(t) myFunc(t).*sin(2*j*pi*f*t); %Bcoeff
+  B=2/T*quadv(b,min(t),max(t));
   
-  fprintf('Coeff b %d: ',k)
-  printf('%G',bk)
+  AN(j)=A;
+  BN(j)=B;
+  
+  printf('Coeff A %d\n',j);
+  printf('%G\n',A);
+  
+  printf('Coeff B %d\n',j);
+  printf('%G\n',B);
 end
-
-for k=1:Ns
-  ak = 2./T*y*cos(k*w0*t);
-end
-
-
-figure(1)
-plot(t,y)
-xlabel('Time');
-ylabel('Amplitude');
-grid on;
