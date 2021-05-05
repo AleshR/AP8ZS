@@ -80,7 +80,7 @@ title('Window')
 grid on;
 
 subplot(4,1,2)
-plot(window.*sig);
+stem(window.*sig);
 title('Signal and window')
 grid on;
 
