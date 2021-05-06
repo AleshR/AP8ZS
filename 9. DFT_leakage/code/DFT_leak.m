@@ -14,7 +14,8 @@ F_smpl = input("Zadejte vzorkovací kmitočet [Hz]: "); %sampling frequency
 Phi = input("Zadejte fázový posun [deg]: "); ;
 printf('---------------------------------------------------------\n');
 
-Ts = 0:1/F_smpl:(k/Freq);
+#Ts = 0:1/N:(k/Freq);
+Ts = linspace(0,k/Freq,N);
 
 switch(input("Zadejte signál:\n...
               1)  DC + A * cos(2*pi*Freq*Ts + Phi)\n...
@@ -52,6 +53,7 @@ switch(input("Zadej výsledné spektrum:\n 1) One-sided\n 2) Double-sided\n"))
     y=fftshift(fouri)/N;
     f_ax = f_dbl;
 endswitch
+printf('---------------------------------------------------------\n');
 
 switch(input("Select window:\n 1) Hamming\n 2) Hanning\n"))
   case 1
@@ -80,7 +82,7 @@ title('Window')
 grid on;
 
 subplot(4,1,2)
-stem(window.*sig);
+stem(sig.*window')
 title('Signal and window')
 grid on;
 
