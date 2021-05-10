@@ -1,22 +1,21 @@
 close all;
-
-F_smpl = 300;
+F_smpl = 900;
 F_noise = 50;
-ampl = 10;
+ampl = 30;
 %FFT
 N=1024;
 Tnoise = linspace(0,length(ECG_signal),length(ECG_signal));
 
 signal = ECG_signal-mean(ECG_signal); %ECG without DC
-noise50 = ampl*sin(2*pi*F_noise*Tnoise)'; %50Hz noise
-noise = noise50.*(0.1*ampl).*(randn(size(noise50)));
 
+noise50 = ampl*sin(2*pi*F_noise*Tnoise)'; %50Hz noise
+noise = noise50.*(randn(size(noise50)));
 sig_n_noise = signal+noise; 
 
-FIR = fir1(12,[0.49,0.51], 'stop');
+FIR = fir1(100,[0.1 0.2], 'stop');
 x_fir = filter(FIR, 1, sig_n_noise);
 
-IIR = cheby1(8, 5 ,[0.45,0.55], 'stop');
+IIR = cheby1(20, 1 ,[0.4 0.8], 'stop');
 x_iir = filter(IIR, 1, sig_n_noise);
 scale = max(signal)/max(x_iir);
 x_iir = x_iir*scale;
@@ -47,14 +46,12 @@ plot(x_fir);
 hold on;
 plot(signal);
 title('FIR filtered');
-legend('FIR','Original');
 
 subplot(515)
 plot(x_iir);
 hold on;
 plot(signal);
 title('IIR filtered');
-legend('IIR','Original');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -75,11 +72,16 @@ grid on;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%figure(3)
-%subplot(211)
-%plot(freqz(x_fir,300));
-%title('Frequency response FIR');
-%
-%subplot(212)
-%plot(freqz(x_iir,300));
-%title('Frequency response IIR');
+figure(3)
+[H,w]=freqz(x_fir,1,1000);  %w je v rad/sample
+[H1,w1]=freqz(x_iir,1,1000);  %w je v rad/sample
+
+subplot(211)
+plot(w*F_smpl/(2*pi),abs(H));
+grid on;
+title('Frequency response FIR');
+
+subplot(212)
+plot(w1*F_smpl/(2*pi),abs(H1));
+grid on;
+title('Frequency response IIR');
